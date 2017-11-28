@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',## linea para cargar estilos
+    #'whitenoise.middleware.WhiteNoiseMiddleware',## linea para cargar estilos en heroku
 ]
 
 ROOT_URLCONF = 'link_travel_app.urls'
@@ -119,24 +119,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
 STATIC_URL = '/static/'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-## styles on heroku
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+## styles,Staticfiles on heroku
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-# Static files (CSS, JavaScript, Images)
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-#STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-STATIC_URL = '/static/'
+#PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+
+#STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
 # Extra places for collectstatic to find static files.
-STATICFILES_DIRS = (
-#    os.path.join(BASE_DIR, 'static'),
-#    os.path.join('main_app/static'),
-   os.path.join(PROJECT_ROOT, 'static'),
-)
+#STATICFILES_DIRS = (
+#   os.path.join(PROJECT_ROOT, 'static'),
+#)
