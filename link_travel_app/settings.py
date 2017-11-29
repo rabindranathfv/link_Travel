@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 """
 Django settings for link_travel_app project.
 
@@ -12,6 +14,19 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 import dj_database_url
+#for decouple python
+from decouple import config
+
+from django.contrib.messages import constants as message_constants
+
+MESSAGE_TAGS = {
+    message_constants.DEBUG: 'w3-light-gray w3-border-black w3-text-dark-gray',
+    message_constants.INFO: 'w3-pale-blue w3-border-blue w3-text-blue',
+    message_constants.SUCCESS: 'w3-pale-green w3-border-green w3-text-green ',
+    message_constants.WARNING: 'w3-sand w3-border-orange w3-text-orange',
+    message_constants.ERROR: 'w3-pale-red w3-border-red w3-text-red',
+}
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -83,6 +98,20 @@ DATABASES = {
     }
 }
 
+#Postgres DataBase Configuration
+"""
+DATABASES = {
+     'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ["DB_NAME"],
+        'USER': os.environ["DB_USER"],
+        'PASSWORD': os.environ["DB_PASSWORD"],
+        'HOST':os.environ["DB_HOST"],
+        'PORT':''
+    }
+}
+"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -121,7 +150,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 STATIC_URL = '/static/'
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ## styles,Staticfiles on heroku
 
@@ -136,3 +165,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 #STATICFILES_DIRS = (
 #   os.path.join(PROJECT_ROOT, 'static'),
 #)
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = config('HOST_USER')
+EMAIL_HOST_PASSWORD = config('HOST_PASSWORD')
