@@ -7,12 +7,16 @@
       <p><span class="w3-tag">Informate via correo electronico</p>
       <p class="w3-xxlarge"><strong>Resuelve tus dudas</strong></p>
       <form action="/contactanos/submit" method=POST >
-        {% csrf_token %}s
+        {% csrf_token %}
+        {% form.as_p %}
+        <!--
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name/Nombre" required name="Name"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people/Cantidad de personas" required name="People"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email/Correo Electronico" required name="Email"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Topic/Topico" required name="Topic"></p>
+        <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Phone Number/Telefono" required name="Phone"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message/Mensaje" required name="Message"></p>
+        -->
         <p><button class="w3-button w3-light-grey w3-block" type="submit" name="submit">ENVIAR MENSAJE</p>
       </form>
   
