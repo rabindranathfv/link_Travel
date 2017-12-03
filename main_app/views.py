@@ -13,7 +13,7 @@ from .models import UserMail
 from .forms import UserMailForm
 # Create your views here.
 def index(request):
-	contact_f = UserMailForm(request.POST)
+	contact_f = UserMailForm()
 	if request.method == 'POST' and contact_f.is_valid():
 
 		contact_f.save()
@@ -46,13 +46,9 @@ def index(request):
 				msg_plain,											#mensaje txt
 				config('HOST_USER'),								#email de envio
 				['rabindranathucv@gmail.com'],						#destinatario de control
+				fail_silently=False,
 				html_message=msg_html,								#mensaje en html
 				)
-		"""
-		Aqui deberiamos enviar 2 correos, uno al que realizo el contacto
-		y otro a nuestro propio correo de contacto de la empresa.
-
-		"""
 		return redirect('/#contact')
 
-	return render(request, 'base.html')
+	return render(request, 'base.html',{'form':contact_f})

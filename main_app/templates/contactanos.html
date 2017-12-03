@@ -8,7 +8,7 @@
       <p class="w3-xxlarge"><strong>Resuelve tus dudas</strong></p>
       <form action="/contactanos/submit" method=POST >
         {% csrf_token %}
-        {% form.as_p %}
+        {% form %}
         <!--
         <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name/Nombre" required name="Name"></p>
         <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people/Cantidad de personas" required name="People"></p>

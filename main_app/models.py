@@ -11,12 +11,8 @@ class UserMail(models.Model):
     People = models.IntegerField(default=1)
     Email = models.EmailField()
     Topic = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=15)
+    Phone = models.CharField(max_length=15)
     Message = models.TextField(max_length = 250, blank = True)
     
-
-    def __str__(self):
-        return self.contact_id
-
     def __str__(self):
         return self.Name
