@@ -7,7 +7,7 @@ from django.db import models
 class UserMail(models.Model):
     
     contact_id = models.AutoField(primary_key=True)
-    Name = models.CharField(max_length=50)
+    Name = models.CharField(max_length=50, blank=True)
     People = models.IntegerField(default=1)
     Email = models.EmailField()
     Topic = models.CharField(max_length=100)

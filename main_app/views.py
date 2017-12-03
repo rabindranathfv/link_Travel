@@ -7,6 +7,7 @@ from django.conf import settings
 
 #Mail library
 from django.core.mail import send_mail
+from decouple import config
 
 #models UserMail
 from .models import UserMail
