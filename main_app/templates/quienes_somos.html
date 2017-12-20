@@ -1,16 +1,27 @@
 {% load staticfiles %}
 
-<div class="w3-row w3-xxlarge" id="quienessomos">
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="quienessomos">
 
-    <div class="w3-container w3-black w3-padding-64 w3-hide-medium ">
-      <h1 class="w3-center w3-jumbo">Quienes Somos</h1>
-        <div class="w3-row w3-center">
-            <div class="w3-col s4 tablink w3-padding-large w3-spin fa fa-spinner"></div>
-            <div class="w3-col s4 tablink w3-padding-large"><p>Agencia de viajes Internacional <br>Somos una agencia de viajes que brinda asesorias turisticas para que puedas iniciar esa gran aventura que deseas vivir!.<br>¡Todo al alcance de un click!</p></div>
-            <div class="w3-col s4 tablink w3-padding-large w3-spin fa fa-spinner"></div>
-            <img src="{% static 'img/Palm_Dubai.jpg' %}" class="w3-animate-fading" alt="link travel">
-            <div class="w3-col s6 tablink w3-padding-large w3-spin fa fa-spinner"></div>
-            <div class="w3-col s6 tablink w3-padding-large w3-spin fa fa-spinner"></div>
+    <div class="w3-content">
+
+        <h1 class="w3-center w3-jumbo w3-animate-top" style="margin-bottom:64px">Quienes Somos</h1>
+
+       <div class="w3-row">
+          <div class="w3-col s12">
+            <video id=video_vip poster="{% static 'img/VIP_VT_CARATULA.jpg' %}" controls>
+                <!-- cambiar VIDEO -->
+                <source src="{% static 'videos/ProgramaVIP.mp4' %}" type="video/mp4">
+            </video>
+          </div>
         </div>
-    </div>
-    </div>
+
+        <br>
+
+        <div class="w3-row">
+            <div class="w3-col s8">
+                    <img src="{% static 'img/Palm_Dubai.jpg' %}" class="w3-animate-fading" alt="link travel">
+            </div>
+        </div>
+
+      </div>
+</div>
