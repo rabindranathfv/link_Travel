@@ -4,7 +4,6 @@ function openMenu(evt, menuName) {
    " w3-red", ""); } document.getElementById(menuName).style.display="block" ; evt.currentTarget.firstElementChild.className +=" w3-red" ; } document.getElementById( "myLink").click();
 
 
-
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
