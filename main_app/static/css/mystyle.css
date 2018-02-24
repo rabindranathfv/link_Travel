@@ -12,12 +12,10 @@ body,h1,h2,h3,h4,h5,h6 {
 
 .bgimg {
 	background-image: url("http://4.bp.blogspot.com/_I2G3kCB487w/TUXImbOrhVI/AAAAAAAAARU/_uEJn_p-g8Q/s1600/plaza%2Bmayor%2Bde%2Bsalamanca.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	height: 100%;
-	min-width: 90%;
-	min-height: 90%;
-	width: 100%;
+	min-height: 100%;
+	background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .boletos , .cruceros , .paquetes , .seg_v, .alquiler_v , .hospedaje {
